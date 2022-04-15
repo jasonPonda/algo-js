@@ -8,11 +8,11 @@
 
 function multiRand(n) {
     tab = new Array();
-    for(let n = 0; n < Array.length; n++){
-        tab[n] = rand10(); 
+    for(let i = 0; i < n; i++){
+        tab[i] = rand10(); 
     }
-    console.log(tab);
+    
     return tab;
 }
 //prompt("un nombre", "");
-console.log("A array with random numbers between 1 and 10 : " + multiRand());
+console.log("A array with random numbers between 1 and 10 : " + multiRand(5));

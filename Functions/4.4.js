@@ -1,11 +1,17 @@
-function pickLearner(inputAr, n){
-    inputAr = ["Emre","Eric","Gilles","Jamie","Jason",
-    "Jeremy","Martin","Rayane","Rayhan","Ricardo",
-    "Steffanie","Sébastien","Tanguy","Tibaud","Zakaria"];
-    
-    n = Math.floor(Math.random() * inputAr.length-1) + 1;
+function pickLearner(inputAr, n) {
+    let cloneInput = [...inputAr];
+    let selectTabLearner = [];
+    for (let i = 0; i < n; i++) {
+        const index = Math.random() * (cloneInput.length - 1) | 0;
+        selectTabLearner.push(cloneInput[index]);
+        cloneInput.splice(index, 1);
+    }
 
-    return n;
+    return selectTabLearner;
 }
 
-console.log(pickLearner());
+let testAr = ["Emre", "Eric", "Gilles", "Jamie", "Jason",
+    "Jeremy", "Martin", "Rayane", "Rayhan", "Ricardo",
+    "Steffanie", "Sébastien", "Tanguy", "Tibaud", "Zakaria"];
+
+console.log(pickLearner(testAr, 5));
